@@ -3,7 +3,7 @@ from .models import Task
 # Create your views here.
 def home(request):
     tasks = Task.objects.filter(is_completed=False).order_by('-update_at')
-    completed_tasks = Task.objects.filter(is_complete=True)
+    completed_tasks = Task.objects.filter(is_completed=True)
 
     context = {
         'task': tasks,
